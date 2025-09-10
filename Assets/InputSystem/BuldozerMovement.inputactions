@@ -1,0 +1,134 @@
+{
+    "name": "BuldozerMovement",
+    "maps": [
+        {
+            "name": "Buldozer",
+            "id": "8aeef8e9-6efa-4f54-a87a-17cf93a214e6",
+            "actions": [
+                {
+                    "name": "Move",
+                    "type": "Value",
+                    "id": "be5cc17e-0988-4d62-adaf-5cc904883c3c",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "RotateRight",
+                    "type": "Value",
+                    "id": "8b5d14ef-860e-4cb8-8d6a-48cb411bfe61",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "RotateLeft",
+                    "type": "Value",
+                    "id": "bc24f0bd-7080-4c7d-a3cf-fb2818348ab0",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "Backward",
+                    "type": "Button",
+                    "id": "5bd81dfd-6252-4487-8e0f-4d862542b256",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "TowerLeft",
+                    "type": "Button",
+                    "id": "b5484069-f0f0-4f5b-985a-42c8ee3310be",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "TowerRight",
+                    "type": "Button",
+                    "id": "c02ea2da-026a-43a5-9a7d-38a3fd59a9c4",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "24d104e1-e452-4d32-89ab-ed1fa10d669b",
+                    "path": "<Keyboard>/d",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "RotateRight",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "9ffe99c5-bf70-4c8a-9d6c-f75514127093",
+                    "path": "<Keyboard>/a",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "RotateLeft",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "5cd2e4c0-0a57-47dc-ba30-bde6c01a247e",
+                    "path": "<Keyboard>/w",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "8bf9f268-05ac-49e0-8fe9-ae5321a205f6",
+                    "path": "<Keyboard>/s",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Backward",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c13b3d40-1017-4668-85db-5f29befa29eb",
+                    "path": "<Keyboard>/leftArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "TowerLeft",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "f348cf60-5990-4f49-b987-6f6f83d489e1",
+                    "path": "<Keyboard>/rightArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "TowerRight",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
