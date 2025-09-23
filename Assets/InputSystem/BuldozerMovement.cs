@@ -144,6 +144,33 @@ public partial class @BuldozerMovement: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""ShootShlang"",
+                    ""type"": ""Button"",
+                    ""id"": ""ff2571ab-b30c-4fbd-bc81-c3ff0623dcf3"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""ShlangUp"",
+                    ""type"": ""Button"",
+                    ""id"": ""f1067625-0df5-414d-8bfd-dee7633088e4"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""ShlangDown"",
+                    ""type"": ""Button"",
+                    ""id"": ""899e72bb-ae9b-424c-87c1-d2923c1898de"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -212,6 +239,39 @@ public partial class @BuldozerMovement: IInputActionCollection2, IDisposable
                     ""action"": ""TowerRight"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""38a9a2cd-f3de-44f9-b7fb-73861196294b"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ShootShlang"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""0c3f0326-0834-4366-939f-5882c44b7fdd"",
+                    ""path"": ""<Keyboard>/upArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ShlangUp"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a0103765-f869-44ab-83ff-577301a30b6a"",
+                    ""path"": ""<Keyboard>/downArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ShlangDown"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -226,6 +286,9 @@ public partial class @BuldozerMovement: IInputActionCollection2, IDisposable
         m_Buldozer_Backward = m_Buldozer.FindAction("Backward", throwIfNotFound: true);
         m_Buldozer_TowerLeft = m_Buldozer.FindAction("TowerLeft", throwIfNotFound: true);
         m_Buldozer_TowerRight = m_Buldozer.FindAction("TowerRight", throwIfNotFound: true);
+        m_Buldozer_ShootShlang = m_Buldozer.FindAction("ShootShlang", throwIfNotFound: true);
+        m_Buldozer_ShlangUp = m_Buldozer.FindAction("ShlangUp", throwIfNotFound: true);
+        m_Buldozer_ShlangDown = m_Buldozer.FindAction("ShlangDown", throwIfNotFound: true);
     }
 
     ~@BuldozerMovement()
@@ -312,6 +375,9 @@ public partial class @BuldozerMovement: IInputActionCollection2, IDisposable
     private readonly InputAction m_Buldozer_Backward;
     private readonly InputAction m_Buldozer_TowerLeft;
     private readonly InputAction m_Buldozer_TowerRight;
+    private readonly InputAction m_Buldozer_ShootShlang;
+    private readonly InputAction m_Buldozer_ShlangUp;
+    private readonly InputAction m_Buldozer_ShlangDown;
     /// <summary>
     /// Provides access to input actions defined in input action map "Buldozer".
     /// </summary>
@@ -347,6 +413,18 @@ public partial class @BuldozerMovement: IInputActionCollection2, IDisposable
         /// Provides access to the underlying input action "Buldozer/TowerRight".
         /// </summary>
         public InputAction @TowerRight => m_Wrapper.m_Buldozer_TowerRight;
+        /// <summary>
+        /// Provides access to the underlying input action "Buldozer/ShootShlang".
+        /// </summary>
+        public InputAction @ShootShlang => m_Wrapper.m_Buldozer_ShootShlang;
+        /// <summary>
+        /// Provides access to the underlying input action "Buldozer/ShlangUp".
+        /// </summary>
+        public InputAction @ShlangUp => m_Wrapper.m_Buldozer_ShlangUp;
+        /// <summary>
+        /// Provides access to the underlying input action "Buldozer/ShlangDown".
+        /// </summary>
+        public InputAction @ShlangDown => m_Wrapper.m_Buldozer_ShlangDown;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -391,6 +469,15 @@ public partial class @BuldozerMovement: IInputActionCollection2, IDisposable
             @TowerRight.started += instance.OnTowerRight;
             @TowerRight.performed += instance.OnTowerRight;
             @TowerRight.canceled += instance.OnTowerRight;
+            @ShootShlang.started += instance.OnShootShlang;
+            @ShootShlang.performed += instance.OnShootShlang;
+            @ShootShlang.canceled += instance.OnShootShlang;
+            @ShlangUp.started += instance.OnShlangUp;
+            @ShlangUp.performed += instance.OnShlangUp;
+            @ShlangUp.canceled += instance.OnShlangUp;
+            @ShlangDown.started += instance.OnShlangDown;
+            @ShlangDown.performed += instance.OnShlangDown;
+            @ShlangDown.canceled += instance.OnShlangDown;
         }
 
         /// <summary>
@@ -420,6 +507,15 @@ public partial class @BuldozerMovement: IInputActionCollection2, IDisposable
             @TowerRight.started -= instance.OnTowerRight;
             @TowerRight.performed -= instance.OnTowerRight;
             @TowerRight.canceled -= instance.OnTowerRight;
+            @ShootShlang.started -= instance.OnShootShlang;
+            @ShootShlang.performed -= instance.OnShootShlang;
+            @ShootShlang.canceled -= instance.OnShootShlang;
+            @ShlangUp.started -= instance.OnShlangUp;
+            @ShlangUp.performed -= instance.OnShlangUp;
+            @ShlangUp.canceled -= instance.OnShlangUp;
+            @ShlangDown.started -= instance.OnShlangDown;
+            @ShlangDown.performed -= instance.OnShlangDown;
+            @ShlangDown.canceled -= instance.OnShlangDown;
         }
 
         /// <summary>
@@ -502,5 +598,26 @@ public partial class @BuldozerMovement: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnTowerRight(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "ShootShlang" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnShootShlang(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "ShlangUp" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnShlangUp(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "ShlangDown" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnShlangDown(InputAction.CallbackContext context);
     }
 }

@@ -14,4 +14,10 @@ public class EnterGame : MonoBehaviour
         SceneManager.LoadScene(4);
         GlobalVariableHolder.ChangeCurrentLevel(4);
     }
+
+    public void EnterGameFF() 
+    {
+        SceneManager.LoadScene(5);
+        GlobalVariableHolder.ChangeCurrentLevel(1);
+    }
 }

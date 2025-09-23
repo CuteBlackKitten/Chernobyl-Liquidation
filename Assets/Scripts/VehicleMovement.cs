@@ -17,52 +17,56 @@ public class BuldozerController : MonoBehaviour
         audioSource = SoundObject.GetComponent<AudioSource>();
         if (audioSource == null)
         {
-            Debug.Log("No AudioSource found.");
+            Debug.LogWarning("No AudioSource found, the game will not work!");
         }
     }
 
     private void FixedUpdate()
     {
-        if (controller.Buldozer.Move.ReadValue<float>() > 0.5f)
+        if (controller != null && rb != null)
         {
-            rb.AddForce(transform.forward * 15, ForceMode.Impulse);
-            audioSource.pitch = 1.2F;
+            if (controller.Buldozer.Move.ReadValue<float>() > 0.5f)
+            {
+                rb.AddForce(transform.forward * 15, ForceMode.Impulse);
+                audioSource.pitch = 1.2F;
+            }
+            else
+            {
+                audioSource.pitch = 1F;
+            }
+            if (controller.Buldozer.RotateLeft.ReadValue<float>() > 0.5f)
+            {
+                transform.Rotate(Vector3.up, -50 * Time.fixedDeltaTime);
+                audioSource.pitch = 1.2F;
+            }
+            if (controller.Buldozer.RotateRight.ReadValue<float>() > 0.5f)
+            {
+                transform.Rotate(Vector3.up, 50 * Time.fixedDeltaTime);
+                audioSource.pitch = 1.2F;
+            }
+            if (controller.Buldozer.Backward.ReadValue<float>() > 0.5f)
+            {
+                rb.AddForce(transform.forward * -15, ForceMode.Impulse);
+                audioSource.pitch = 1.2F;
+            }
+            if (controller.Buldozer.TowerLeft.ReadValue<float>() > 0.5f)
+            {
+                tower.transform.Rotate(Vector3.up, -40 * Time.fixedDeltaTime);
+            }
+            if (controller.Buldozer.TowerRight.ReadValue<float>() > 0.5f)
+            {
+                tower.transform.Rotate(Vector3.up, 40 * Time.fixedDeltaTime);
+            }
         }
-        else
-        {
-            audioSource.pitch = 1F;
-        }
-        if (controller.Buldozer.RotateLeft.ReadValue<float>() > 0.5f)
-        {
-            transform.Rotate(Vector3.up, -50 * Time.fixedDeltaTime);
-            audioSource.pitch = 1.2F;
-        }        
-        if (controller.Buldozer.RotateRight.ReadValue<float>() > 0.5f)
-        {
-            transform.Rotate(Vector3.up, 50 * Time.fixedDeltaTime);
-            audioSource.pitch = 1.2F;
-        }        
-        if (controller.Buldozer.Backward.ReadValue<float>() > 0.5f)
-        {
-            rb.AddForce(transform.forward * -15, ForceMode.Impulse);
-            audioSource.pitch = 1.2F;
-        }
-        if (controller.Buldozer.TowerLeft.ReadValue<float>() > 0.5f)
-        {
-            tower.transform.Rotate(Vector3.up, -40 * Time.fixedDeltaTime);
-            audioSource.pitch = 1.2F;
-        }
-        if (controller.Buldozer.TowerRight.ReadValue<float>() > 0.5f)
-        {
-            tower.transform.Rotate(Vector3.up, 40 * Time.fixedDeltaTime);
-            audioSource.pitch = 1.2F;
-        }
-
-        //transform.position = transform.position + new Vector3(moveDirection.x * 3, 0, moveDirection.y * 3) * Time.fixedDeltaTime;
     }
 
     private void OnEnable()
     {
         controller.Buldozer.Enable();
+    }
+
+    private void OnDisable()
+    {
+        controller.Buldozer.Disable();
     }
 }
