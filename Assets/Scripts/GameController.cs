@@ -8,11 +8,11 @@ public class GameController : MonoBehaviour
 
     private void Awake()
     {
-        if (GlobalVariableHolder.ReturnCurrentLevel() == 3) 
+        if (GlobalVariableHolder.ReturnCurrentLevel() == 1) 
         {
             CreateGraphite();
         }
-        if (GlobalVariableHolder.ReturnCurrentLevel() == 4)
+        if (GlobalVariableHolder.ReturnCurrentLevel() == 2)
         {
             CreateGraphite2();
         }

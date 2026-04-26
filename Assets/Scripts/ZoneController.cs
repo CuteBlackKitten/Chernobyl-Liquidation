@@ -31,18 +31,18 @@ public class ZoneController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (GlobalVariableHolder.ReturnCurrentLevel() == 3)
+        if (GlobalVariableHolder.ReturnCurrentLevel() == 1)
         {
             if (score >= 690)
             {
-                SceneManager.LoadScene(3);
+                SceneManager.LoadScene(1);
             }
         }
-        if (GlobalVariableHolder.ReturnCurrentLevel() == 4)
+        if (GlobalVariableHolder.ReturnCurrentLevel() == 2)
         {
             if (score >= 690)
             {
-                SceneManager.LoadScene(3);
+                SceneManager.LoadScene(1);
             }
         }
     }
