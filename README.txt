@@ -1,1 +1,0 @@
-This project has post-processing effects. To turn them on, go to GCO scene and look for "Global Volume". Once you find it, turn on intensity in "Vignette", "Film Grain" and turn on Gamma in "Lift Gamma Gain".
