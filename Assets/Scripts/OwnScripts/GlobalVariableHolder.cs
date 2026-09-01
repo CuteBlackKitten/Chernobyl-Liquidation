@@ -6,7 +6,8 @@ using UnityEngine;
 public static class GlobalVariableHolder
 {
     private static int CurrentLevel = 0;
-    
+    private static float[] SettingsValuesList = new float[4];
+        
     // Firefight fires array
     private static int[] FireStatusList = new int[5];
 
@@ -40,5 +41,27 @@ public static class GlobalVariableHolder
         {
             Debug.LogWarning("Tried setting a value for a nonexistent fire ID.");
         }
+    }
+
+    public static void SetSettingValue(int ID, float value) 
+    {
+        if (1 <= ID && ID <= 4)
+        {
+            SettingsValuesList[ID - 1] = value;
+        }
+        else 
+        {
+            Debug.LogWarning("Tried setting a value for a nonexistent setting ID");
+        }
+    }
+
+    public static float GetSettingValue(int ID) 
+    {
+        if (1 <= ID && ID <= 4) 
+        {
+            return SettingsValuesList[ID - 1];
+        }
+        Debug.LogWarning($"Tried getting a value of a nonexsitent setting ID. {ID} is not a valid setting ID");
+        return 0;
     }
 }

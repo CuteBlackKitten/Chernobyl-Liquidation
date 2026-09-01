@@ -4997,6 +4997,7 @@ GameObject:
   - component: {fileID: 4979734601033360844}
   - component: {fileID: 7936573048889036077}
   - component: {fileID: 8749290645991066968}
+  - component: {fileID: 1170089745806969024}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -5122,6 +5123,18 @@ MonoBehaviour:
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
   m_Version: 2
+--- !u!114 &1170089745806969024
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4075908455413597072}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96e0207d196353749851a26af9e07cb9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CameraFOVController
 --- !u!1 &4087493872962991671
 GameObject:
   m_ObjectHideFlags: 0
@@ -7605,6 +7618,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9075075164516726438}
   - component: {fileID: 5272375356511732356}
+  - component: {fileID: 5587411300769931776}
   m_Layer: 0
   m_Name: SoundObject
   m_TagString: Untagged
@@ -7724,6 +7738,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &5587411300769931776
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5776832735972005110}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 329bd80360000354ebea77d72e49f9b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SoundVolumeController
+  isMusic: 0
 --- !u!1 &5867416265132018787
 GameObject:
   m_ObjectHideFlags: 0
